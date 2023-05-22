@@ -1,0 +1,10 @@
+
+train: # train image path 
+val:  # test image path
+
+# number of classes
+nc: 1
+
+# class names
+#names: ['0', '1', '2']
+names: [ 'pepole', 'racket', 'ball']  # class names
