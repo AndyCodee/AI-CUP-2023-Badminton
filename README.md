@@ -1,5 +1,6 @@
 # AI-CUP-2023-Badminton
-
+## Google Colab Link: 
+https://colab.research.google.com/drive/1cFEd6TNbo8CWNhbZp0Dydt1c4HYEU6mx?usp=sharing
 ## 運行環境
 
 ### 使用 Anaconda 建立環境
@@ -79,5 +80,5 @@ for j in range(len(HitFrame)):
 
 |           Model Type            |   Epoch              | Public Score | Private Score | Path                                                                           
 | :-----------------------------: | :------------------: | :----------: | :-----------: | :------------------------------------------------------------------------------------------------------ |
-|    yolo自訓練模型 + yolov7pose   | 100 (train best.pt)  |   0.0709   | **0.0519**  | weights/best.pt |
+|    yolov8自訓練模型 + yolov7pose   | 100 (train best.pt)  |   0.0709   | **0.0519**  | weights/best.pt |
 
