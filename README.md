@@ -50,7 +50,7 @@ python3
 
 
 ## 重要模組介紹
-
+- 以上資料路徑都設定好後，開啟主程式`Final.ipynb`直接執行，即可自動產出答案`ans.csv`檔。
 Answer 寫入格式: 我們會先根據HitFrame判斷後續多個判斷式(如:Hitter, RoundHead,...)結果，並各別以List列出。
 ```python3
 
