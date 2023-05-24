@@ -79,5 +79,5 @@ for j in range(len(HitFrame)):
 
 |           Model Type            |   Epoch              | Public Score | Private Score | Path                                                                           
 | :-----------------------------: | :------------------: | :----------: | :-----------: | :------------------------------------------------------------------------------------------------------ |
-|    yolo自訓練模型 + yolov7pose   | 100 (train best.pt)  |   0.0709   | **0.0519**  | weights/best.pt |
+|    yolov8自訓練模型 + yolov7pose   | 100 (train best.pt)  |   0.0709   | **0.0519**  | weights/best.pt |
 
