@@ -23,6 +23,37 @@ pip install -r requirement.txt
 - STEP1: 先將影片按幀數轉為圖片
 ```
 python3
+import os
+import cv2
+import glob
+
+video_path = "C:/Users/88690/Desktop/Yolov8/badminton video dataset/part1/train/00099/00099.mp4"
+output_folder = "C:/Users/88690/Desktop/Yolov8/badminton video dataset/Change to frame/all images/00099/"
+
+
+if os.path.isdir(output_folder):
+    print("Delete old result folder: {}".format(output_folder))
+    os.system("rm -rf {}".format(output_folder))
+os.system("mkdir {}".format(output_folder))
+print("create folder: {}".format(output_folder))
+
+vc = cv2.VideoCapture(video_path)
+fps = vc.get(cv2.CAP_PROP_FPS)
+frame_count = int(vc.get(cv2.CAP_PROP_FRAME_COUNT))
+print(frame_count)
+video = []
+
+for idx in range(frame_count):
+    vc.set(1, idx)
+    ret, frame = vc.read()
+    height, width, layers = frame.shape
+    size = (width, height)
+    if frame is not None:
+        file_name = '{}{:08d}.jpg'.format(output_folder,idx)
+        cv2.imwrite(file_name, frame)
+
+    print("\rprocess: {}/{}".format(idx+1 , frame_count), end = '')
+vc.release()
 
 ```
 - STEP2: 運用+++++++++++++提供的yololabel，框出訓練資料中人以及球的位置，產出各物件的位置txt檔，內含各物件的xywh(中心X座標, 中心Y座標, 物件寬, 物件高)。
