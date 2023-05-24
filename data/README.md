@@ -1,4 +1,4 @@
-# AI-CUP-2023-Badminton
+# AI CUP 競賽報告與程式碼 TEAM_2995 「教電腦看羽球」競賽
 
 ## 資料
 
