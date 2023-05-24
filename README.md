@@ -54,8 +54,7 @@ for idx in range(frame_count):
 vc.release()
 
 ```
-- STEP2: 運用[YoloLabel](https://github.com/developer0hye/Yolo_Label.git)
-提供的yololabel，框出訓練資料中人以及球的位置，產出各物件的位置txt檔，內含各物件的xywh(中心X座標, 中心Y座標, 物件寬, 物件高)。
+- STEP2: 運用[YoloLabel](https://github.com/developer0hye/Yolo_Label.git)，框出訓練資料中人以及球的位置，產出各物件的位置txt檔，內含各物件的xywh(中心X座標, 中心Y座標, 物件寬, 物件高)。
 
 
 ## 模型
