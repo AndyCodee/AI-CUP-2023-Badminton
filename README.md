@@ -20,12 +20,12 @@ pip install -r requirement.txt
 
 對官方給的影片資料進行前處理。
 
-- step1: 先將影片按幀數轉為圖片
+- STEP1: 先將影片按幀數轉為圖片
 ```
 python3
 
 ```
-- step2: 運用+++++++++++++提供的yololabel，框出訓練資料中人以及球的位置，產出各物件的位置txt檔，內含各物件的xywh(中心X座標, 中心Y座標, 物件寬, 物件高)。
+- STEP2: 運用+++++++++++++提供的yololabel，框出訓練資料中人以及球的位置，產出各物件的位置txt檔，內含各物件的xywh(中心X座標, 中心Y座標, 物件寬, 物件高)。
 
 
 ## 模型
@@ -39,8 +39,8 @@ python3
 
 ## 訓練
 
-- step1: 在`train_yolov8model/dataset.yaml`內設定好前處理後的圖片路徑以及相對應的物件位置txt檔。
-- step2: 在`train_yolov8model/train.ipynb`進行訓練。
+- STEP1: 在`train_yolov8model/dataset.yaml`內設定好前處理後的圖片路徑以及相對應的物件位置txt檔。
+- STEP2: 在`train_yolov8model/train.ipynb`進行訓練。
 
 ## 預測
 
