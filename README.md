@@ -21,19 +21,48 @@ pip install -r requirement.txt
 對官方給的影片資料進行前處理。
 
 - STEP1: 先將影片按幀數轉為圖片
-```
-python3
+```python3
+import os
+import cv2
+import glob
+
+video_path = "data/part1/train/00001/00001.mp4"
+output_folder = "YOUR_PATH"
+
+if os.path.isdir(output_folder):
+    print("Delete old result folder: {}".format(output_folder))
+    os.system("rm -rf {}".format(output_folder))
+os.system("mkdir {}".format(output_folder))
+print("create folder: {}".format(output_folder))
+
+vc = cv2.VideoCapture(video_path)
+fps = vc.get(cv2.CAP_PROP_FPS)
+frame_count = int(vc.get(cv2.CAP_PROP_FRAME_COUNT))
+print(frame_count)
+video = []
+
+for idx in range(frame_count):
+    vc.set(1, idx)
+    ret, frame = vc.read()
+    height, width, layers = frame.shape
+    size = (width, height)
+    if frame is not None:
+        file_name = '{}{:08d}.jpg'.format(output_folder,idx)
+        cv2.imwrite(file_name, frame)
+
+    print("\rprocess: {}/{}".format(idx+1 , frame_count), end = '')
+vc.release()
 
 ```
-- STEP2: 運用+++++++++++++提供的yololabel，框出訓練資料中人以及球的位置，產出各物件的位置txt檔，內含各物件的xywh(中心X座標, 中心Y座標, 物件寬, 物件高)。
+- STEP2: 運用[YoloLabel](https://github.com/developer0hye/Yolo_Label.git)，框出訓練資料中人以及球的位置，產出各物件的位置txt檔，內含各物件的xywh(中心X座標, 中心Y座標, 物件寬, 物件高)。
 
 
 ## 模型
 
-本專案採用兩種模型權重：1.自己訓練的人球辨識  2.++++++++提供的yolov7pose權重
+本專案採用兩種模型權重：1.自己訓練的人球辨識  2.外部姿態辨識權重
 
-- `人球辨識`： 採用++++++++++++++提供的yolov8m.pt神經網絡架構，並依此架構訓練出自己的模型。
-- `姿態辨識`： 從++++++++下載yolov7pose。
+- `人球辨識`： 採用[Ultralytics](https://github.com/ultralytics/ultralytics.git)提供的yolov8m.pt神經網絡架構，並依此架構訓練出自己的模型。
+- `姿態辨識`： 從[WongKinYiu/yolov7](https://github.com/WongKinYiu/yolov7/releases/download/v0.1/yolov7-w6-pose.pt)下載yolov7-w6-pose.pt。
 
 - 建議將訓練後的權重以及下載好的權重存放至 `weights` 資料夾，Jupyer Notebook 預設會從此資料夾載入權重。
 
@@ -46,7 +75,7 @@ python3
 
 - 訓練後結果會存放在`train_yolov8model/runs/detect/train`內，此目錄底下的的`weights`會存放`best.pt`為最終訓練好的權重。
 - 而訓練的`confusion matrix`則會自動產出於`train_yolov8model/runs/detect/train/confusion_matrix.png`中。
-- 放圖片
+![image](train_yolov8model/runs/detect/train/confusion_matrix.png)
 
 
 ## 重要模組介紹
@@ -75,11 +104,11 @@ Winner = #Hitter[最後一球]的相反球
 
 writer = csv.writer(csvfile)
 for j in range(len(HitFrame)):
-  writer.writerow([videoname, j+1, HitFrame[j], Hitter[j], RoundHead[j], Backhand[j], BallHeight[j], int(total[HitFrame[j]][0][0]), int(total[HitFrame[j]][0][1]), HitterLocationX[j], HitterLocationY[j],               DefenderLocationX[j], DefenderLocationY[j], BallType[j], 'B'])
+    writer.writerow([videoname, j+1, HitFrame[j], Hitter[j], RoundHead[j], Backhand[j], BallHeight[j], int(total[HitFrame[j]][0][0]), int(total[HitFrame[j]][0][1]), HitterLocationX[j], HitterLocationY[j], DefenderLocationX[j], DefenderLocationY[j], BallType[j], Winner])
                     
 ```
 
-## 模型權重(要改epoch)
+## 模型權重
 
 |           Model Type            |   Epoch              | Public Score | Private Score | Path                                                                           
 | :-----------------------------: | :------------------: | :----------: | :-----------: | :------------------------------------------------------------------------------------------------------ |
