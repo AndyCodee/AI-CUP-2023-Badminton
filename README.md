@@ -75,7 +75,7 @@ vc.release()
 
 - 訓練後結果會存放在`train_yolov8model/runs/detect/train`內，此目錄底下的的`weights`會存放`best.pt`為最終訓練好的權重。
 - 而訓練的`confusion matrix`則會自動產出於`train_yolov8model/runs/detect/train/confusion_matrix.png`中。
-- 放圖片
+- ![image](train_yolov8model/runs/detect/train/confusion_matrix.png)
 
 
 ## 重要模組介紹
