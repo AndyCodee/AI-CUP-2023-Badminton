@@ -26,9 +26,8 @@ import os
 import cv2
 import glob
 
-video_path = "C:/Users/88690/Desktop/Yolov8/badminton video dataset/part1/train/00099/00099.mp4"
-output_folder = "C:/Users/88690/Desktop/Yolov8/badminton video dataset/Change to frame/all images/00099/"
-
+video_path = "data/part1/train/00001/00001.mp4"
+output_folder = "YOUR_PATH"
 
 if os.path.isdir(output_folder):
     print("Delete old result folder: {}".format(output_folder))
@@ -55,7 +54,8 @@ for idx in range(frame_count):
 vc.release()
 
 ```
-- STEP2: 運用+++++++++++++提供的yololabel，框出訓練資料中人以及球的位置，產出各物件的位置txt檔，內含各物件的xywh(中心X座標, 中心Y座標, 物件寬, 物件高)。
+- STEP2: 運用[YoloLabel](https://github.com/developer0hye/Yolo_Label.git)
+提供的yololabel，框出訓練資料中人以及球的位置，產出各物件的位置txt檔，內含各物件的xywh(中心X座標, 中心Y座標, 物件寬, 物件高)。
 
 
 ## 模型
