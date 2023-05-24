@@ -41,8 +41,8 @@ python3
 
 ## 訓練
 
-step1: 在`train_yolov8model/dataset.yaml`內設定好前處理後的圖片路徑以及相對應的物件位置txt檔。
-step2: 在`train_yolov8model/train.ipynb`進行訓練。
+- step1: 在`train_yolov8model/dataset.yaml`內設定好前處理後的圖片路徑以及相對應的物件位置txt檔。
+- step2: 在`train_yolov8model/train.ipynb`進行訓練。
 
 ## 預測
 
