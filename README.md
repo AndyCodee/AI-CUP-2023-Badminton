@@ -83,5 +83,5 @@ for j in range(len(HitFrame)):
 
 |           Model Type            |   Epoch              | Public Score | Private Score | URL                                                                           
 | :-----------------------------: | :------------------: | :----------: | :-----------: | :------------------------------------------------------------------------------------------------------ |
-|    yolo自訓練模型 + yolov7pose   | 100 (train best.pt)  |   0.0709   | **0.0519**  | [Download](https://github.com/ShinoharaHare/AI-CUP-2022-Fall-NLP/releases/download/v0.0.0/s-sp-lstm.pt) |
+|    yolo自訓練模型 + yolov7pose   | 100 (train best.pt)  |   0.0709   | **0.0519**  | weights/best.pt |
 
