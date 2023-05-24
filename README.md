@@ -104,7 +104,7 @@ Winner = #Hitter[最後一球]的相反球
 
 writer = csv.writer(csvfile)
 for j in range(len(HitFrame)):
-    writer.writerow([videoname, j+1, HitFrame[j], Hitter[j], RoundHead[j], Backhand[j], BallHeight[j], int(total[HitFrame[j]][0][0]), int(total[HitFrame[j]][0][1]), HitterLocationX[j], HitterLocationY[j], DefenderLocationX[j], DefenderLocationY[j], BallType[j], 'B'])
+    writer.writerow([videoname, j+1, HitFrame[j], Hitter[j], RoundHead[j], Backhand[j], BallHeight[j], int(total[HitFrame[j]][0][0]), int(total[HitFrame[j]][0][1]), HitterLocationX[j], HitterLocationY[j], DefenderLocationX[j], DefenderLocationY[j], BallType[j], Winner])
                     
 ```
 
