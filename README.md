@@ -59,10 +59,10 @@ vc.release()
 
 ## 模型
 
-本專案採用兩種模型權重：1.自己訓練的人球辨識  2.++++++++提供的yolov7pose權重
+本專案採用兩種模型權重：1.自己訓練的人球辨識  2.外部姿態辨識權重
 
-- `人球辨識`： 採用++++++++++++++提供的yolov8m.pt神經網絡架構，並依此架構訓練出自己的模型。
-- `姿態辨識`： 從++++++++下載yolov7pose。
+- `人球辨識`： 採用[Ultralytics](https://github.com/ultralytics/ultralytics.git)提供的yolov8m.pt神經網絡架構，並依此架構訓練出自己的模型。
+- `姿態辨識`： 從[WongKinYiu/yolov7](https://github.com/WongKinYiu/yolov7/releases/download/v0.1/yolov7-w6-pose.pt)下載yolov7-w6-pose.pt。
 
 - 建議將訓練後的權重以及下載好的權重存放至 `weights` 資料夾，Jupyer Notebook 預設會從此資料夾載入權重。
 
