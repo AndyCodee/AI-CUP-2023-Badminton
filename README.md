@@ -13,10 +13,8 @@ pip install -r requirement.txt
 ## 資料
 
 - `data`: 將part1以及part2放入data資料夾中
-
-路徑
-- data/part1
-- data/part2
+- `data/part1`
+- `data/part2`
 
 ## 資料處理
 
