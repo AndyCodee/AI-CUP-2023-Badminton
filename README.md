@@ -21,8 +21,7 @@ pip install -r requirement.txt
 對官方給的影片資料進行前處理。
 
 - STEP1: 先將影片按幀數轉為圖片
-```
-python3
+```python3
 import os
 import cv2
 import glob
