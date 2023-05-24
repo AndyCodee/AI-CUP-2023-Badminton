@@ -23,31 +23,31 @@ pip install -r requirement.txt
 對官方給的影片資料進行前處理。
 
 - step1: 先將影片按幀數轉為圖片
-‘’‘
+```
 python3
 
-'''
+```
 - step2: 運用+++++++++++++提供的yololabel，框出訓練資料中人以及球的位置，產出各物件的位置txt檔，內含各物件的xywh(中心X座標, 中心Y座標, 物件寬, 物件高)。
 
 
-##模型
+## 模型
 
 本專案採用兩種模型權重：1.自己訓練的人球辨識  2.++++++++提供的yolov7pose權重
 
-- ‘人球辨識‘： 採用++++++++++++++提供的yolov8m.pt神經網絡架構，並依此架構訓練出自己的模型。
-- ‘姿態辨識’： 從++++++++下載yolov7pose。
+- `人球辨識`： 採用++++++++++++++提供的yolov8m.pt神經網絡架構，並依此架構訓練出自己的模型。
+- `姿態辨識`： 從++++++++下載yolov7pose。
 
 - 建議將訓練後的權重以及下載好的權重存放至 `weights` 資料夾，Jupyer Notebook 預設會從此資料夾載入權重。
 
 ## 訓練
 
-step1: 在'train_yolov8model/dataset.yaml'內設定好前處理後的圖片路徑以及相對應的物件位置txt檔。
-step2: 在'train_yolov8model/train.ipynb'進行訓練。
+step1: 在`train_yolov8model/dataset.yaml`內設定好前處理後的圖片路徑以及相對應的物件位置txt檔。
+step2: 在`train_yolov8model/train.ipynb`進行訓練。
 
 ## 預測
 
-- 訓練後結果會存放在'train_yolov8model/runs/detect/train'內，此目錄底下的的'weights'會存放'best.pt'為最終訓練好的權重。
-- 而訓練的confusion matrix則會自動產出於'train_yolov8model/runs/detect/train/confusion_matrix.png'中。
+- 訓練後結果會存放在`train_yolov8model/runs/detect/train`內，此目錄底下的的`weights`會存放`best.pt`為最終訓練好的權重。
+- 而訓練的`confusion matrix`則會自動產出於`train_yolov8model/runs/detect/train/confusion_matrix.png`中。
 - 放圖片
 
 
