@@ -1,4 +1,4 @@
-"# AI-CUP-2023-Badminton" 
+# AI-CUP-2023-Badminton
 
 ## 運行環境
 
