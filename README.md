@@ -1,4 +1,5 @@
 "# AI-CUP-2023-Badminton" 
+
 ## 運行環境
 
 ### 使用 Anaconda 建立環境
@@ -11,24 +12,36 @@ pip install -r requirement.txt
 
 ## 資料
 
-- `data`: 將part1以及part2放入
+- `data`: 將part1以及part2放入data資料夾中
 
+路徑
+- data/part1
+- data/part2
 
 ## 資料處理
 
-step1: 先將影片按幀數轉為圖片
-step2: 運用+++++++++++++提供的yololabel，框出訓練資料中人以及球的位置，產出物件的位置txt檔，內含各物件的xywh(中心X座標, 中心Y座標, 物件寬, 物件高)。
+對官方給的影片資料進行前處理。
+
+- step1: 先將影片按幀數轉為圖片
+‘’‘
+python3
+
+'''
+- step2: 運用+++++++++++++提供的yololabel，框出訓練資料中人以及球的位置，產出各物件的位置txt檔，內含各物件的xywh(中心X座標, 中心Y座標, 物件寬, 物件高)。
 
 
 ##模型
 
-本專案在辨識人以及球上，採用的是++++++++++++++提供的yolov8m.pt神經網絡架構，並依此架構訓練出自己的模型。
-訓練好後建議放在weights中。
-從++++++++下載yolov7pose放入weights中。
+本專案採用兩種模型權重：1.自己訓練的人球辨識  2.++++++++提供的yolov7pose權重
+
+- ‘人球辨識‘： 採用++++++++++++++提供的yolov8m.pt神經網絡架構，並依此架構訓練出自己的模型。
+- ‘姿態辨識’： 從++++++++下載yolov7pose。
+
+- 建議將訓練後的權重以及下載好的權重存放至 `weights` 資料夾，Jupyer Notebook 預設會從此資料夾載入權重。
 
 ## 訓練
 
-step1: 在'train_yolov8model/dataset.yaml'內設定好訓練圖片路徑以及相對應的位置txt檔。
+step1: 在'train_yolov8model/dataset.yaml'內設定好前處理後的圖片路徑以及相對應的物件位置txt檔。
 step2: 在'train_yolov8model/train.ipynb'進行訓練。
 
 ## 預測
@@ -74,4 +87,3 @@ for j in range(len(HitFrame)):
 | :-----------------------------: | :------------------: | :----------: | :-----------: | :------------------------------------------------------------------------------------------------------ |
 |    yolo自訓練模型 + yolov7pose   | 100 (train best.pt)  |   0.0709   | **0.0519**  | [Download](https://github.com/ShinoharaHare/AI-CUP-2022-Fall-NLP/releases/download/v0.0.0/s-sp-lstm.pt) |
 
-- 建議將下載好的權重存放至 `weights` 資料夾，演示預測流程的 Jupyer Notebook 預設會從此資料夾載入權重
