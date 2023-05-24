@@ -20,7 +20,7 @@ pip install -r requirement.txt
 
 對官方給的影片資料進行前處理。
 
-- STEP1: 先將影片按幀數轉為圖片 [程式碼](train_yolov8model/videoToframe.ipynb)
+- STEP1: 先將影片按幀數轉為圖片([videoToframe code](train_yolov8model/videoToframe.ipynb))
 - STEP2: 運用[YoloLabel](https://github.com/developer0hye/Yolo_Label.git)，框出訓練資料中人以及球的位置，產出各物件的位置txt檔，內含各物件的xywh(中心X座標, 中心Y座標, 物件寬, 物件高)。
 
 
